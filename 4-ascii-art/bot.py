@@ -1,0 +1,12 @@
+# Display a box
+print("##########")
+print("#        #")
+print("#        #")
+print("##########")
+print()
+print()
+print("        /\_/\ ")
+print("   ____/ o o \ ")
+print(" /~____  =ø= / ")
+print("(______)__m_m) ")
+print()
