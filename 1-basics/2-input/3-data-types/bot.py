@@ -6,10 +6,12 @@ print("How old are you? (in years)")
 myAge = int(input())
 print()
 print("How tall are you? (in meters)")
+# height to take in decimal input
 height = float(input())
 print()
 print("How much do you weigh? (in kilograms)")
 weight = float(input())
 print()
+# bmi calculated by dividing the weight by the height squared
 bmi = weight/(height*height)
-print("So, "+ name +" you are " + str(myAge) + " years old and your bmi is " + str(bmi) + ".")
+print("So, "+ name +" you are " + str(myAge) + " years old and your bmi is " + format(bmi, '.2f') + ".")
