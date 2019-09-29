@@ -9,3 +9,4 @@ print()
 # Ideal Weight calculated by 
 weight = bmi*(height*height)
 print("So for a BMI of... "+ str(bmi) +" a height that = " + str(height) + "m, your ideal weight is " + format(weight, '.2f') + "kg.")
+print()
