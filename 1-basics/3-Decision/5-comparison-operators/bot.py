@@ -6,10 +6,10 @@ print("Please enter the second number...")
 num2 = int(input())
 print()
 if (num1 < num2):
-    print("The first number is the smallest!")
+    print("The first number " + str(num1) + " is the smallest!")
     print()
 elif (num1 > num2):
-    print("The second number is the smallest!")
+    print("The second number " + str(num2) + "is the smallest!")
     print()
 else:
     print("The two numbers are equal")
