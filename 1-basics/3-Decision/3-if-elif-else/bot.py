@@ -9,10 +9,6 @@ elif (direction == "down"):
     print()
     print("I am painting in the downward direction!")
     print()
-elif (direction == "down"):
-    print()
-    print("I am painting in the downward direction!")
-    print()
 elif (direction == "left"):
     print()
     print("I am painting towards the left!")
