@@ -26,4 +26,5 @@ else:
     print("You are lazy, and not moving at all")
     print()
 
-print("Goodbye")
+print("Did you produce a work of art...")
+print()
