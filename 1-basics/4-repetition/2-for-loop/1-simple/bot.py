@@ -1,7 +1,7 @@
 # demonstrate the use of a simple for loop
 number = int(input("How many mountains should I display? "))
 print("\nDisplaying...")
-for x in range(0, number, 1):
+for count in range(0, number, 1):
     print("      __ ")
     print("     /  \_ ")
     print("    /^    \ ")
