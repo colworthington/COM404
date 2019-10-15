@@ -2,7 +2,8 @@
 # defining function
 def listen():
     listen = (input("What sound did you hear? "))
-    print("That was loud " + listen +"!")
+    print("\nThat was loud " + listen +"!")
     print()
 
+# calling the function
 listen()
