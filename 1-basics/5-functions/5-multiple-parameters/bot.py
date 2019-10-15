@@ -9,5 +9,5 @@ def climb_ladder(remaining, crossed):
         print("We made it!")
 
 # calling the function
-climb_ladder(2, 5)
 climb_ladder(5, 5)
+climb_ladder(6, 5)
