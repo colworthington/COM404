@@ -18,7 +18,6 @@ def run():
     elif (response == "average"):
         print()
         print("The average of Beep and Bop's weight is:", calc_avg_weight(beepweight, bopweight))
-        # print("average weight = " calc_avg_weight()"")
     else:
         print("I don't know that one!")
 # Run the program
