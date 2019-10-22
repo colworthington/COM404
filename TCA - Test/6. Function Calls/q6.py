@@ -24,7 +24,8 @@ def run():
     elif response =="plan":
         decide_plan(hero1,hero2)
     else:
-        print("I don't know that one!")
+        print()
+        print("Invalid command. Please try again")
 
 # Run the program
 run()
