@@ -1,4 +1,4 @@
-# input and output program]#
+# input and output program
 print()
 # reading users input
 response = input("What happens when the last petal falls? ")
