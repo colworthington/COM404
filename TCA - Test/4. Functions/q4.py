@@ -1,6 +1,6 @@
 # code to demonstrate functions
 print()
-
+# function
 def visit(ghost):
     if ghost == "Ghost of Christmas Past":
         print("Humbug! I care not for these days of past celebration.")
@@ -8,7 +8,9 @@ def visit(ghost):
         print("Humbug! I care not for their suffering.")
     elif ghost == "Ghost of Christmas Future":
         print("Please no more. I will change my ways.")
-
+    else:
+        print("End.")
+# run the function
 visit("Ghost of Christmas Past") 
 visit("Ghost of Christmas Present") 
 visit("Ghost of Christmas Future")
