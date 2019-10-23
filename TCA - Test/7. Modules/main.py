@@ -2,7 +2,6 @@
 #from functions import under, over, both, grid, run
 from functions import under
 word = input("Please enter a word: ""\n")
-char = len(word)
 print("\nEnter one of the following options:")
 print(" (1) Under - display the word with a line under it.")
 print(" (2) Over - display the word with a line over it")
