@@ -1,4 +1,5 @@
 # code to demonstrate functions
+# defining function spideysense
 def spideySense(enemy, direction):
     if enemy == "Green Goblin":
         print("Goblin bombs incoming from " + direction)
