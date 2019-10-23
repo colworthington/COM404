@@ -1,6 +1,6 @@
 # main program
 #from functions import under, over, both, grid, run
-from functions import under
+from functions import under, over
 word = input("Please enter a word: ""\n")
 print("\nEnter one of the following options:")
 print(" (1) Under - display the word with a line under it.")
@@ -12,6 +12,7 @@ if option == "1":
     under(word)
     print()
 elif option == "2":
+    over(word)
     print()
 elif option == "3":
     print()
