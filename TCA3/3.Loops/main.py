@@ -1,6 +1,6 @@
 # code to demonstrate loops
-# set variable and read input
 print()
+# set variables and read input
 number = int(input("How many heroes must we gather? "))
 count = 1
 print("Gathering heroes...")
