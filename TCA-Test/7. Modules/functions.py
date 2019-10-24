@@ -24,6 +24,7 @@ def both(word):
 
 def grid(word, size):
     for count in range(size, 0, -1):
-        both(word), end=""
+        both(word)
+        print("|", end="")
 
 print()
