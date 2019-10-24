@@ -1,6 +1,6 @@
 # main program
 #from functions import under, over, both, grid, run
-from functions import under, over, both
+from functions import under, over, both, grid
 word = input("Please enter a word: ""\n")
 print("\nEnter one of the following options:")
 print(" (1) Under - display the word with a line under it.")
@@ -18,6 +18,8 @@ elif option == "3":
     both(word)
     print()
 elif option == "4":
+    size = int(input("Please enter value for grid: "))
+    grid(word, size)
     print()
 else:
     print("...invalid option number")
