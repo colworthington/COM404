@@ -14,4 +14,4 @@ weight = float(input())
 print()
 # bmi calculated by dividing the weight by the height squared
 bmi = weight/(height*height)
-print("So, "+ name +" you are " + str(myAge) + " years old and your bmi is " + format(bmi, '.2f') + ".")
+print("So, "+ name +" you are " + str(myAge) + " years old and your bmi is " + format(bmi, '.3f') + ".")
