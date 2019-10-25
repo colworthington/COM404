@@ -7,4 +7,4 @@ while count <= numbers:
     num = int(input("Please enter number " + str(count) + " of " + str(numbers) + " "))
     count = count + 1
     total = total + num
-print("\n The answer is " +str(total) + "")
+print("\nThe answer is " +str(total) + "")

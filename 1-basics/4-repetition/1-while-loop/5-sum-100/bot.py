@@ -4,6 +4,7 @@ count = 1
 print("Calculating the sum of the first 100 numbers... ")
 print()
 while count <= 100:
+    print("", total)
     total = total + count
     count = count +1
 

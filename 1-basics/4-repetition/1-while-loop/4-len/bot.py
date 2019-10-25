@@ -4,6 +4,6 @@ char = len(phrase)
 count = 0
 print("\n")
 while  count < char:
-        print(" Bop",end="")
+        print(" Bop", end="")
         count = count +1
-print("\n\n End.")
+print("\n\nEnd.")
