@@ -18,9 +18,11 @@ def both(word):
     print()
     for position in range(0, len(word), 1):
         print("*", end="")
-        print("\n" + word, end="")
+    print("\n" + word, end="")
+    print()
     for position in range(0, len(word), 1):
         print("*", end="")
+    print()
 
 def grid(word, size):
     print()
