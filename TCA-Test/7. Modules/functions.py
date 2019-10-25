@@ -24,7 +24,14 @@ def both(word):
 
 def grid(word, size):
     for count in range(size, 0, -1):
-        both(word)
-        print("|", end="")
+        print()
+        for position in range(0, len(word), 1):
+            print("*", end="")
+        print("\n" + word +" |", end="")
+    char = len(word)
+    print()
+    print(char * "*", end="")
+            # both(word)
+
 
 print()
