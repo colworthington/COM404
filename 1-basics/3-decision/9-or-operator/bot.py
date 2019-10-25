@@ -3,7 +3,7 @@
 adventure = (input("What type of adventure? "))
 print()
 # adventure responses
-if ((adventure == "scary") or (adventure == "short")):
+if (adventure == "scary") or (adventure == "short"):
     print("Entering the dark forest!")
 elif ((adventure == "safe") or (adventure == "long")):
     print("Taking the safe route!")

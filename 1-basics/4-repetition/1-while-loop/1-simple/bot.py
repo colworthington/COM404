@@ -2,7 +2,7 @@
 cables = int(input("How many cables should I remove? "))
 removed = 0
 print("\n")
-while removed < cables:
+while (removed < cables):
     print("Removed cable.")
     removed = removed +1
 print()
