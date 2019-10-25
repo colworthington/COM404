@@ -2,12 +2,12 @@
 phrase = (input("What phrase do you see? "))
 
 # Identify markings
-print("\nReversing...\nThe phrase is ", end="")
+print("\nReversing...")
 
-reversed = ""
-
+reversed = " "
 for letter in phrase:
     reversed = letter + reversed
 
-print(reversed)
+print("The phrase is", reversed, end="")
+#print(reversed)
 print()
