@@ -18,20 +18,23 @@ def both(word):
     print()
     for position in range(0, len(word), 1):
         print("*", end="")
-    print("\n" + word)
+        print("\n" + word, end="")
     for position in range(0, len(word), 1):
         print("*", end="")
 
 def grid(word, size):
-    for count in range(size, 0, -1):
-        print()
-        for position in range(0, len(word), 1):
-            print("*", end="")
-        print("\n" + word +" |", end="")
-    char = len(word)
     print()
-    print(char * "*", end="")
-            # both(word)
-
-
-print()
+    char = len(word)
+    count2 = size
+    while count2 != 0:
+        for count in range(size, 0, -1):
+            print(char * "*", "  ", end="")
+        print()
+        for count in range(size, 0, -1):
+            print("" + str(word) + " | ", end="")
+        print()
+        for count in range(size, 0, -1):
+            print(char * "*", "  ", end="")
+        print()
+        count2 = count2-1
+    # both(word)
