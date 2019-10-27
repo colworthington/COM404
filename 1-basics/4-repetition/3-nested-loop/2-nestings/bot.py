@@ -12,7 +12,7 @@
 print("Please enter a sequence:")
 sequence = input()
 
-print("Please enter the characterfor the marker:")
+print("Please enter the character for the marker:")
 marker = input()
 
 # Find markers
