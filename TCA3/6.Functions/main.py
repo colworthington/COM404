@@ -7,16 +7,19 @@ def isFusionShot(slug1, slug2):
         print("True")
         return True
     else:
+        print("False")
         return False
 
 def isDefectiveShot(slug1, slug2):
     print()
     answer = isFusionShot(slug1, slug2)
+    if answer != True:
+        return True
+        print("True")
+    elif answer == False:
+        print("False")
+        return False
     
-    #else:
-     #   print()
-
-
 def run():
     print()
     slug1 = input("Enter the type for the first slug (Infurnus or AquaBeek): ")
@@ -28,9 +31,7 @@ def run():
         isDefectiveShot(slug1, slug2)
     elif response != "fusion" or "defective":
         print("\nInvalid selection. Please try again")
-    #elif response != "fusion" or "defective":
-       # print("\nInvalid selection. Please try again")
-
+   
 # Run the program
 run()
 print()
