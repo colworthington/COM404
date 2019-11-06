@@ -43,8 +43,8 @@ class Bot:
         
 
 bop = Bot("Bop", 30, 5, 8)
-bop.display_name()
-bop.display_age()
-bop.display_energy()
-bop.display_shield()
+#bop.display_name()
+#bop.display_age()
+#bop.display_energy()
+#bop.display_shield()
 print(bop.__str__())
