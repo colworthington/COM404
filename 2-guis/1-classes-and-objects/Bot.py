@@ -13,7 +13,6 @@ class Bot:
         #self.summary = ""
 
     def display_name(self):
-        print()
         print(" ###########")
         print(" #   {}  #".format(self.name))
         print(" ###########")
@@ -47,4 +46,4 @@ bop = Bot("Bop", 30, 5, 8)
 #bop.display_age()
 #bop.display_energy()
 #bop.display_shield()
-print(bop.__str__())
+#print(bop.__str__())

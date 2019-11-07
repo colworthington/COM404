@@ -11,15 +11,18 @@ from FlyingBot import Flyingbot
 #bop = Bot("Bop", 30, 5, 8)
 #bop.display_name()
 
-superbop = Superbot("SBop", 31, 6, 9, 4)
-superbop.display_name()
-superbop.display_age()
-superbop.display_energy()
-superbop.display_shield()
-superbop.display_super_power_level()
+#superbop = Superbot("SBop", 31, 6, 9, 4)
+#superbop.display_name()
+#superbop.display_age()
+#superbop.display_energy()
+#superbop.display_shield()
+#superbop.display_super_power_level()
 
-#flyingbot =
-#bop.display_age()
-#bop.display_energy()
-#bop.display_shield()
-#bop.display_name
+flyingbop = Flyingbot("FBop", 32, 8, 10, 6, 55)
+flyingbop.display_name()
+flyingbop.display_age()
+flyingbop.display_energy()
+flyingbop.display_shield()
+flyingbop.display_super_power_level()
+flyingbop.display_hover_distance()
+

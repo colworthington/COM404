@@ -7,5 +7,5 @@ class Superbot(Bot):
         print()
 
     def display_super_power_level(self):
-        print("Super Power level: ", self.super_power_level)
+        print("Super Power level: " + str(self.super_power_level))
         print()
