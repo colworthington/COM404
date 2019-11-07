@@ -14,10 +14,10 @@ class Bot:
 
     def display_name(self):
         print()
-        print(" #########")
-        print(" #  {}  #".format(self.name))
-        print(" #########") 
-        
+        print(" ###########")
+        print(" #   {}  #".format(self.name))
+        print(" ###########")
+
     def display_age(self):
         print()
         print("     {}  ".format(self.age))
@@ -40,7 +40,7 @@ class Bot:
 
     def __str__(self):
         return("{} is {} years old, energy:{} , shield:{} \n".format(self.name, self.age, self.energy, self.shield_level))
-        
+
 
 bop = Bot("Bop", 30, 5, 8)
 #bop.display_name()
