@@ -1,15 +1,14 @@
 # Code to demonstrate inheritance
+#from SuperBot import *
 from Bot import Bot
 from SuperBot import Superbot
 from FlyingBot import Flyingbot
-
-#from SuperBot import *
 #display_name, display_age, display_energy
-
-
-
 #bop = Bot("Bop", 30, 5, 8)
 #bop.display_name()
+#bop.display_age()
+#bop.display_energy()
+#bop.display_shield()
 
 #superbop = Superbot("SBop", 31, 6, 9, 4)
 #superbop.display_name()
