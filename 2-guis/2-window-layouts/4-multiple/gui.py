@@ -14,6 +14,7 @@ class Gui(Tk):
         self.__add_outer_frame()
         self.__add_heading_label()
         self.__add_instruction_label()
+        self.__add_email_frame()
         self.__add_email_label()
         self.__add_email_entry()
         self.__add_subscribe_button()
@@ -23,6 +24,12 @@ class Gui(Tk):
         self.outer_frame = Frame()
         self.outer_frame.grid(row=0, column=0)
         self.outer_frame.configure(bg="#eee", padx=10, pady=10)
+
+# Frame function
+    def __add_email_frame(self):
+        self.email_frame = Frame(self.outer_frame)
+        self.email_frame.grid(row=2, column=0)
+        #self.outer_frame.configure(bg="#eee")
 
 # Heading function
     def __add_heading_label(self):
@@ -38,14 +45,14 @@ class Gui(Tk):
 
 # Email Label function
     def __add_email_label(self):
-        self.email_label = Label(self.outer_frame)
-        self.email_label.grid(row=2, column=0, sticky=E)
-        self.email_label.configure(pady=20, text="Email:")
+        self.email_label = Label(self.email_frame)
+        self.email_label.pack(side=LEFT)
+        self.email_label.configure(font="Arial 11", text="Email:")
 
 # Email Entry function
     def __add_email_entry(self):
-        self.email_entry = Entry(self.outer_frame)
-        self.email_entry.grid(row=2, column=1, sticky=W)
+        self.email_entry = Entry(self.email_frame)
+        self.email_entry.pack(side=RIGHT)
         self.email_entry.configure(width=40)
 
     #def add_background_canvas(self):
