@@ -1,5 +1,5 @@
 # Code to run program
-from grid import Grid
+from gui import Gui
 
-gui = Grid()
+gui = Gui()
 gui.mainloop()

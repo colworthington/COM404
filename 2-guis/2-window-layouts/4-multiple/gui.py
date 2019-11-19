@@ -1,7 +1,7 @@
 # GUI interface
 from tkinter import *
 
-class Grid(Tk):
+class Gui(Tk):
 # initialise window
     def __init__(self):
         super().__init__()
@@ -58,5 +58,3 @@ class Grid(Tk):
         self.subscribe_button = Button(self.outer_frame)
         self.subscribe_button.grid(row=3, column=0, columnspan=2, sticky=N+E+S+W)
         self.subscribe_button.configure(bg="#fcc", text="Subscribe")
-
-
