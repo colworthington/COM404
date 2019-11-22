@@ -18,7 +18,9 @@ class Gui(Tk):
         self.__add_lyric_entry()
         self.__add_button()
         self.__add_lyrics_label()
-        self.__add_lyrics_list()
+        #self.__add_lyrics_list()
+        self.__add_scrollbar()
+        self.__add_listbox()
         
 # Frame function
     def __add_outer_frame(self):
@@ -57,16 +59,25 @@ class Gui(Tk):
         self.lyrics_label.configure(bg="#eee", text="Lyrics:")
 
 # Lyrics List Entry function
-    def __add_lyrics_list(self):
-        self.lyrics_list = Entry(self.outer_frame)
-        self.lyrics_list.grid(row=4, column=0)
-        self.lyrics_list.configure(width=32)
+    #def __add_lyrics_list(self):
+        #self.lyrics_list = Entry(self.outer_frame)
+        #self.lyrics_list.grid(row=4, column=0)
+        #self.lyrics_list.configure(width=32)
 
-# Lyrics function
-    #def __add_button(self):
-        #self.lyrics_label = Label(self.outer_frame)
-        #self.lyrics_label.grid(row=3, column=0, columnspan=2, sticky=W)
-        #self.lyrics_label.configure(bg="#eee", text="Lyrics:")
+# Lyrics Scrollbar and List Box
+    def __add_scrollbar(self):
+        self.scrollbar = Scrollbar(self.outer_frame)
+        self.scrollbar.grid(row=4, column=1) 
+        #self.scrollbar.config(command=self.listbox.yview)
+
+    def __add_listbox(self):   
+        self.listbox = Listbox(self.outer_frame, yscrollcommand=self.scrollbar.set)
+        for line in range(50):
+            self.listbox.insert(END, "This is line number " + str(line))
+        self.listbox.grid(row=4, column=0, sticky=W)
+        self.listbox.configure(width=32)
+        self.scrollbar.configure(command=self.listbox.yview)
+       
 
 
         
