@@ -53,8 +53,8 @@ class Gui(Tk):
     def __add_checkbox(self):
         CheckVar1 = IntVar()
         CheckVar2 = IntVar()
-        c1 = Checkbutton(self.checkbox_frame, text="Yes", variable=CheckVar1)
-        c2 = Checkbutton(self.checkbox_frame, text="No", variable=CheckVar2)
+        c1 = Checkbutton(self.checkbox_frame, text="Yes", variable=CheckVar1, onvalue=1, offvalue=0)
+        c2 = Checkbutton(self.checkbox_frame, text="No", variable=CheckVar2, onvalue=1, offvalue=0)
         c1.pack(side=LEFT)
         c2.pack(side=RIGHT)
         #self.C1 = Checkbutton(text = "Yes", variable = CheckVar1, onvalue = 1, offvalue = 0, height=1, width = 2)
@@ -112,3 +112,15 @@ class Gui(Tk):
         self.check_button.grid(row=7, column=0)
         #, columnspan=1, sticky=N+E+S+W)
         self.check_button.configure(bg="#fcc", text="Check")
+        self.check_button.bind("<ButtonRelease-1>", self.__button_clicked)
+
+# Button Click function
+    def __button_clicked(self, event):
+        CheckVar1 = int(self.checkbox.get())
+        CheckVar2 = int(self.checkbox.get())
+        if (CheckVar1 == 1) and (CheckVar2 == 0):
+            messagebox.showinfo("Checks", "You comply with all the requirements")
+        #elif response >= 2:
+            #messagebox.showinfo("Checks", "You have purchased " + str(response) + " tickets!")        
+        else:
+            messagebox.showinfo("Checks", "Unfortunately you do not comply!")
