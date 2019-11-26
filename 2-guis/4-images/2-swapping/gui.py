@@ -49,12 +49,14 @@ class Gui(Tk):
 
 # Button1 Click function
     def __button_clicked(self, event):
-        self.cactus2_image_label = Label(self.outer_frame)
-        self.cactus2_image_label.grid(row=1, column=0)
-        self.cactus2_image_label.configure(image=self.cactus2_image, height=300, width=350)
+        #self.cactus2_image_label = Label(self.outer_frame)
+        #self.cactus2_image_label.grid(row=1, column=0)
+        self.cactus_image_label.configure(image=self.cactus2_image)
+        #self.cactus2_image_label.configure(image=self.cactus2_image, height=300, width=350)
        
 # Button2 Click function
     def __button2_clicked(self, event):
-        self.cactus_image_label = Label(self.outer_frame)
-        self.cactus_image_label.grid(row=1, column=0)
-        self.cactus_image_label.configure(image=self.cactus_image, height=300, width=350)
+        #self.cactus_image_label = Label(self.outer_frame)
+        #self.cactus_image_label.grid(row=1, column=0)
+        self.cactus_image_label.configure(image=self.cactus_image)
+        #self.cactus_image_label.configure(image=self.cactus_image, height=300, width=350)
