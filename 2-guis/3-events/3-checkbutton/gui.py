@@ -53,10 +53,10 @@ class Gui(Tk):
     def __add_checkbox(self):
         self.CheckVar1 = IntVar()
         self.CheckVar2 = IntVar()
-        self.c1 = Checkbutton(self.checkbox_frame, text="Yes", variable=CheckVar1, onvalue=1, offvalue=0)
-        self.c2 = Checkbutton(self.checkbox_frame, text="No", variable=CheckVar2, onvalue=1, offvalue=0)
-        self.c1.pack(side=LEFT)
-        self.c2.pack(side=RIGHT)
+        c1 = Checkbutton(self.checkbox_frame, text="Yes", variable=self.CheckVar1, onvalue=1, offvalue=0)
+        c2 = Checkbutton(self.checkbox_frame, text="No", variable=self.CheckVar2, onvalue=1, offvalue=0)
+        c1.pack(side=LEFT)
+        c2.pack(side=RIGHT)
         #self.C1 = Checkbutton(text = "Yes", variable = CheckVar1, onvalue = 1, offvalue = 0, height=1, width = 2)
         #self.C2 = Checkbutton(text = "No", variable = CheckVar2, onvalue = 1, offvalue = 0, height=1, width = 2)
         #self.C1.grid(row=1, column=0, sticky=W)
@@ -78,10 +78,10 @@ class Gui(Tk):
 
 # Add Checkbox2 function
     def __add_checkbox2(self):
-        CheckVar3 = IntVar()
-        CheckVar4 = IntVar()
-        c3 = Checkbutton(self.checkbox2_frame, text="Yes", variable=CheckVar3, onvalue=1, offvalue=0)
-        c4 = Checkbutton(self.checkbox2_frame, text="No", variable=CheckVar4, onvalue=1, offvalue=0)
+        self.CheckVar3 = IntVar()
+        self.CheckVar4 = IntVar()
+        c3 = Checkbutton(self.checkbox2_frame, text="Yes", variable=self.CheckVar3, onvalue=1, offvalue=0)
+        c4 = Checkbutton(self.checkbox2_frame, text="No", variable=self.CheckVar4, onvalue=1, offvalue=0)
         c3.pack(side=LEFT)
         c4.pack(side=RIGHT)
     
@@ -99,10 +99,10 @@ class Gui(Tk):
 
 # Add Checkbox2 function
     def __add_checkbox3(self):
-        CheckVar5 = IntVar()
-        CheckVar6 = IntVar()
-        c5 = Checkbutton(self.checkbox3_frame, text="Yes", variable=CheckVar5, onvalue=1, offvalue=0)
-        c6 = Checkbutton(self.checkbox3_frame, text="No", variable=CheckVar6, onvalue=1, offvalue=0)
+        self.CheckVar5 = IntVar()
+        self.CheckVar6 = IntVar()
+        c5 = Checkbutton(self.checkbox3_frame, text="Yes", variable=self.CheckVar5, onvalue=1, offvalue=0)
+        c6 = Checkbutton(self.checkbox3_frame, text="No", variable=self.CheckVar6, onvalue=1, offvalue=0)
         c5.pack(side=LEFT)
         c6.pack(side=RIGHT)
 
@@ -116,11 +116,11 @@ class Gui(Tk):
 
 # Button Click function
     def __button_clicked(self, event):
-        self.CheckVar1 = int(self.checkbox.get())
-        self.CheckVar2 = int(self.checkbox.get())
-        if (self.CheckVar1 == 1) and (self.CheckVar2 == 0):
-            messagebox.showinfo("Checks", "You comply with all the requirements")
-        #elif response >= 2:
-            #messagebox.showinfo("Checks", "You have purchased " + str(response) + " tickets!")        
+        if self.CheckVar1.get() == 1 and self.CheckVar3.get() == 1 and self.CheckVar5.get() == 1:
+            messagebox.showinfo("Checks", "You comply with all the requirements needed (including visa)")    
+        elif self.CheckVar1.get() == 1 and self.CheckVar3.get() == 1 and self.CheckVar5.get() == 0:
+            messagebox.showinfo("Checks", "You may need to apply for a visa?")   
+        elif self.CheckVar1.get() == 1 and self.CheckVar3.get() == 1:
+            messagebox.showinfo("Checks", "You comply with all the requirements")  
         else:
             messagebox.showinfo("Checks", "Unfortunately you do not comply!")

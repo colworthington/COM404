@@ -30,5 +30,5 @@ class Gui(Tk):
 # Heading function
     def __add_heading_label(self):
         self.heading_label = Label(self.outer_frame)
-        self.heading_label.grid(row=0, column=0)
+        self.heading_label.grid(row=0, column=0, columnspan=3)
         self.heading_label.configure(font="Arial 16", text="Hotel Check-In")
