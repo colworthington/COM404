@@ -8,9 +8,11 @@ class Gui(Tk):
         super().__init__()
 
 # load resources
-        self.cactus_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/2-swapping/cactus.gif")
-        self.cactus2_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/2-swapping/cactus2.gif")
-            
+        #self.cactus_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/2-swapping/cactus.gif")
+        self.cactus_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/2-swapping/cactus.gif")
+        #self.cactus2_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/2-swapping/cactus2.gif")
+        self.cactus2_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/2-swapping/cactus2.gif")
+
 # set window attributes
         self.title("Gui")
         self.configure(bg="#ccc", padx=10, pady=10)

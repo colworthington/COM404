@@ -8,8 +8,10 @@ class Gui(Tk):
         super().__init__()
 
 # load resources
-        self.map_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/3-positioning/map.gif")
-        self.bus_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/3-positioning/bus4.gif")
+        #self.map_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/3-positioning/map.gif")
+        self.map_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/3-positioning/map.gif")
+        #self.bus_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/3-positioning/bus4.gif")
+        self.bus_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/3-positioning/bus4.gif")
                    
 # set window attributes
         self.title("Travel")
