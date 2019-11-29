@@ -58,4 +58,4 @@ class Gui(Tk):
         elif response >= 2:
             messagebox.showinfo("Purchased", "You have purchased " + str(response) + " tickets!")        
         else:
-            messagebox.showinfo("Purchased", "You have entered an invalid number of tickets!")
+            messagebox.showerror("Error", "You have entered an invalid number of tickets!")
