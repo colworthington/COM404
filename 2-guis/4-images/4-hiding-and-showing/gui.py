@@ -65,10 +65,8 @@ class Gui(Tk):
     def __keyboard_entry(self):
         response = (self.first_name_entry.get())
         if response == " ":
-                self.cross1a_image_label = Label(self.outer_frame)
-                self.cross1a_image_label.grid(row=1, column=3, sticky=E)
-                self.cross1a_image_label.configure(image=self.cross1a_image)
-
+                self.box1_image_label.configure(image=self.cross1a_image)
+                
 # Add Lyric function
     def __add_second_label(self):
         self.second_label = Label(self.outer_frame)
