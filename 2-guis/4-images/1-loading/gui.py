@@ -8,12 +8,12 @@ class Gui(Tk):
         super().__init__()
 
 # load resources
-        #self.ambulance_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/1-loading/ambulance.gif")
-        self.ambulance_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/1-loading/ambulance.gif")
-        #self.bike_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/1-loading/bike.gif")
-        self.bike_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/1-loading/bike.gif")
-        #self.plane_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/1-loading/plane.gif")
-        self.plane_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/1-loading/plane.gif")
+        self.ambulance_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/1-loading/ambulance.gif")
+        #self.ambulance_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/1-loading/ambulance.gif")
+        self.bike_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/1-loading/bike.gif")
+        #self.bike_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/1-loading/bike.gif")
+        self.plane_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/1-loading/plane.gif")
+        #self.plane_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/1-loading/plane.gif")
       
 # set window attributes
         self.title("Modes")
@@ -36,7 +36,7 @@ class Gui(Tk):
     def __add_heading_label(self):
         self.heading_label = Label(self.outer_frame)
         self.heading_label.grid(row=0, column=0, columnspan=3)
-        self.heading_label.configure(font="Arial 16", text="Transport")
+        self.heading_label.configure(font="Arial 18", text="Transport")
 
     def __add_ambulance_image_label(self):
         self.ambulance_image_label = Label(self.outer_frame)

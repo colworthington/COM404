@@ -7,7 +7,7 @@ class AnimatedGui(Tk):
         super().__init__()
         
         # load resources
-        self.ball_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/5-animation/1-single-object/ball3.gif")
+        self.plane_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/5-animation/1-single-object/plane.gif")
         
         # set window attributes
         self.configure(height=500, width=500)
@@ -17,8 +17,8 @@ class AnimatedGui(Tk):
         self.configure(bg="#ccc", padx=10, pady=10)
 
         # set animation attributes
-        self.ball_x_pos = 200
-        self.ball_y_pos = 200
+        self.ball_x_pos = 250
+        self.ball_y_pos = 0
         self.ball_x_change = 2
         self.ball_y_change = 2
         
@@ -30,10 +30,10 @@ class AnimatedGui(Tk):
 
 # the timer tick function    
     def tick(self):
-        if self.ball_x_pos > 415:
+        if self.ball_x_pos > 450:
             self.ball_x_change = -2
             
-        if self.ball_y_pos > 415:
+        if self.ball_y_pos > 450:
             self.ball_y_change = -2
 
         if self.ball_x_pos < 0:
@@ -51,4 +51,4 @@ class AnimatedGui(Tk):
     def add_ball_image_label(self):
         self.ball_image_label = Label()
         self.ball_image_label.place(x=self.ball_x_pos, y=self.ball_y_pos)
-        self.ball_image_label.configure(image=self.ball_image)
+        self.ball_image_label.configure(image=self.plane_image)

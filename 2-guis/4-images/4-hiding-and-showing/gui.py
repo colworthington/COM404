@@ -8,12 +8,17 @@ class Gui(Tk):
         super().__init__()
 
 # load resources
-        #self.map_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/3-positioning/map.gif")
-        self.box1_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/4-hiding-and-showing/box1.gif")
-        self.box2_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/4-hiding-and-showing/box1.gif")
-        self.box3_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/4-hiding-and-showing/box1.gif")
-        self.cross1a_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/4-hiding-and-showing/cross1a.gif")
-        self.tick1a_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/4-hiding-and-showing/tick1a.gif")
+        self.box1_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/4-hiding-and-showing/box1.gif")
+        self.box2_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/4-hiding-and-showing/box1.gif")
+        self.box3_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/4-hiding-and-showing/box1.gif")
+        self.cross1a_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/4-hiding-and-showing/cross1a.gif")
+        self.tick1a_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/4-images/4-hiding-and-showing/tick1a.gif")
+    
+        #self.box1_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/4-hiding-and-showing/box1.gif")
+        #self.box2_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/4-hiding-and-showing/box1.gif")
+        #self.box3_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/4-hiding-and-showing/box1.gif")
+        #self.cross1a_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/4-hiding-and-showing/cross1a.gif")
+        #self.tick1a_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/4-images/4-hiding-and-showing/tick1a.gif")
                    
 # set window attributes
         self.title("Hotel Form")
@@ -91,7 +96,7 @@ class Gui(Tk):
 
 # Second Entry function
     def __keyboard2_entry(self, event):
-        response2 = int(self.passport_entry.get())
+        response2 = str(self.passport_entry.get())
         if response2 == "":
             self.box2_image_label.configure(image=self.cross1a_image)
         else:        
