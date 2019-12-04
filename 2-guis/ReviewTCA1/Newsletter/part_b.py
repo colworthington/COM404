@@ -23,6 +23,9 @@ class Gui(Tk):
         self.__add_email_label()
         self.__add_email_entry()
         self.__add_default_image_label()
+        self.__add_type_frame()
+        self.__add_type_label()
+        self.__add_type_menubutton()
         self.__add_subscribe_button()
 
     def __add_outer_frame(self):
@@ -91,9 +94,33 @@ class Gui(Tk):
         #sticky=N+E+S+W)
         #self.subscribe_button.configure(bg="#fcc", text="Subscribe", width=48)
 
+# Type Frame
+    def __add_type_frame(self):
+        self.type_frame = Frame(self.outer_frame)
+        self.type_frame.grid(row=3, column=0)
+
+    def __add_type_label(self):
+        self.type_label = Label(self.type_frame)
+        self.type_label.pack(side=LEFT)
+        self.type_label.configure(text="Type", padx=10)
+
+    def __add_type_menubutton(self):
+        self.WeeklyVar = StringVar()
+        self.MonthlyVar = StringVar()
+        self.YearlyVar = StringVar()
+        self.type_menubutton = Menubutton(self.type_frame)
+        self.type_menubutton.pack(side=RIGHT)
+        self.type_menubutton.configure(text="Selection", width=30, relief=RAISED, justify=CENTER)
+        self.type_menubutton.menu = Menu(self.type_menubutton, tearoff = 0)
+        self.type_menubutton["menu"]=self.type_menubutton.menu
+        self.type_menubutton.menu.add_checkbutton(label = "Weekly", variable=self.MonthlyVar)
+        self.type_menubutton.menu.add_checkbutton(label = "Monthly", variable=self.MonthlyVar)
+        self.type_menubutton.menu.add_checkbutton(label = "Yearly", variable=self.YearlyVar)   
+        #self.type_menubutton.pack()
+
     def __add_subscribe_button(self):
         self.subscribe_button = Button()
-        self.subscribe_button.grid(row=3, column=0, columnspan=2, sticky=N+E+S+W)
+        self.subscribe_button.grid(row=4, column=0, columnspan=2, sticky=N+E+S+W)
         self.subscribe_button.configure(bg="#fcc", text="Subscribe") 
         #width=50)
         self.subscribe_button.bind("<ButtonRelease-1>", self.__subscribe_button_clicked)
@@ -105,12 +132,11 @@ class Gui(Tk):
         #width=47)
 
     def __subscribe_button_clicked(self, event):
-        messagebox.showinfo("Newsletter", "Subscribed!") 
-        #response = self.email_entry.get()
-        #if response == "":
-            #messagebox.showerror("Error", "It appears that you have not entered an Email address!")
-            
+        
+        response = self.email_entry.get()
+        if response == "":
+            messagebox.showerror("Error", "Please enter you Email!")  
         #elif response >= 2:
             #messagebox.showinfo("Purchased", "You have purchased " + str(response) + " tickets!")        
-        #else:
-            #messagebox.showerror("Error", "You have entered an invalid number of tickets!")
+        else:
+            messagebox.showinfo("Newsletter", "Subscribed!") 
