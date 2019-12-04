@@ -105,17 +105,23 @@ class Gui(Tk):
         self.type_label.configure(text="Type", padx=10)
 
     def __add_type_menubutton(self):
-        self.WeeklyVar = StringVar()
-        self.MonthlyVar = StringVar()
         self.YearlyVar = StringVar()
+        self.YearlyVar.set("Yearly")
+        self.MonthlyVar = StringVar()
+        self.MonthlyVar.set("Monthly")          
+        self.WeeklyVar = StringVar()
+        self.WeeklyVar.set("Weekly") 
         self.type_menubutton = Menubutton(self.type_frame)
         self.type_menubutton.pack(side=RIGHT)
-        self.type_menubutton.configure(text="Selection", width=30, relief=RAISED, justify=CENTER)
+        self.type_menubutton.configure(textvariable=self.WeeklyVar, width=30, relief=RAISED, justify=CENTER)
         self.type_menubutton.menu = Menu(self.type_menubutton, tearoff = 0)
         self.type_menubutton["menu"]=self.type_menubutton.menu
         self.type_menubutton.menu.add_checkbutton(label = "Weekly", variable=self.MonthlyVar)
         self.type_menubutton.menu.add_checkbutton(label = "Monthly", variable=self.MonthlyVar)
         self.type_menubutton.menu.add_checkbutton(label = "Yearly", variable=self.YearlyVar)   
+        #choice = self.type_menubutton.menu.get()
+        if self.type_menubutton.menu.add_checkbutton == self.YearlyVar:
+            self.type_menubutton.configure(textvariable=self.YearlyVar, width=30, relief=RAISED, justify=CENTER)
         #self.type_menubutton.pack()
 
     def __add_subscribe_button(self):
