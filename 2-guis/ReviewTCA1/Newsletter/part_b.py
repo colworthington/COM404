@@ -6,8 +6,10 @@ class Gui(Tk):
     def __init__(self):
         super().__init__()
 
-# load resources
+        # load resources
         self.default_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/Grey.gif")
+        self.empty_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/frown.gif")
+        self.filled_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/smile.gif")
 
         # set window properties
         self.title("Newsletter")
@@ -66,13 +68,21 @@ class Gui(Tk):
         self.email_entry.configure(fg="#f00", width=30)
         #padx=10)
         #justify=RIGHT
-        
+        self.email_entry.bind("<KeyRelease>", self.__email_keyboard_entry)
+
 # Add image lable to Frame with grid
     def __add_default_image_label(self):
         self.default_image_label = Label(self.outer_frame)
         self.default_image_label.grid(row=2, column=1, sticky=W)
         #self.default_image_label.pack(side = RIGHT)
         self.default_image_label.configure(image=self.default_image, height=15, width=15, padx=10, pady=10)
+
+    def __email_keyboard_entry(self, event):
+        response = self.email_entry.get()
+        if response == "":
+            self.default_image_label.configure(image=self.empty_image)
+        else:
+            self.default_image_label.configure(image=self.filled_image)
 
 # Button function
     #def __add_subscribe_button(self):
