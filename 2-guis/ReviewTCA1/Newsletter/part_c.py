@@ -109,3 +109,8 @@ class Gui(Tk):
         self.animation_button = Button()
         self.animation_button.grid(row=5, column=0, columnspan=2, sticky=N+E+S+W)
         self.animation_button.configure(bg="#fcc", text="Start Animation") 
+        self.animation_button.bind("<Button-1>", self.__animation_button_clicked)
+
+    def __animation_button_clicked(self, event):
+        self.animation_button.configure(bg="#fcc", text="Stop Animation")
+        
