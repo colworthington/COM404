@@ -48,7 +48,7 @@ class AnimatedGui(Tk):
         self.ball_image_label.place(x=self.ball_x_pos, y=self.ball_y_pos)
         self.after(75, self.tick)
 
-        # the ball image
+# the ball image
     def add_ball_image_label(self):
         self.ball_image_label = Label()
         self.ball_image_label.place(x=self.ball_x_pos, y=self.ball_y_pos)

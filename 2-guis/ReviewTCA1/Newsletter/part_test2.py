@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import time
 
 class Gui(Tk):
 
@@ -31,6 +32,9 @@ class Gui(Tk):
         self.__add_subscribe_button()
         self.__add_animation_button()
         self.__add_animation_frame()
+        # start the timer
+        self.tick()
+        #self.__add_image_label()
 
 # set animation attributes
         self.image_x_pos = 5
@@ -116,11 +120,13 @@ class Gui(Tk):
             messagebox.showinfo("Newsletter", "You have subscribed to the Yearly newsletter!  You will receive this at the start of each year.")
 
     def __add_animation_button(self):
+        #self.buttontext = StringVar()
+        #self.buttontext.set("Start Animation")
         self.animation_button = Button()
         self.animation_button.grid(row=5, column=0, columnspan=2, sticky=N+E+S+W)
         self.animation_button.configure(bg="#fcc", text="Start Animation", command=self.__toggle_text) 
         self.animation_button.bind("<Button-1>", self.__animation_button_clicked)
-        
+
 # Animation Frame
     def __add_animation_frame(self):
         self.animation_frame = Frame()
@@ -134,21 +140,45 @@ class Gui(Tk):
         else:
             # reset to Start
             self.animation_button["text"] = "Start Animation"
-    
+
     def __animation_button_clicked(self, event):
-        pass
-        #animation = self.__animation_button_clicked
-        #selection = self.SelectionVar.get()
-        #self.__animation_button_clicked = False
-        #global self.__animation_button_clicked
-        #if self.__animation_button_clicked == True:
-            #self.animation_button.configure(text="Stop Animation") 
-        #else:
-            #self.__animation_button_clicked = False
+        animation = self.__animation_button_clicked
+        selection = self.SelectionVar.get()
+        if animation != "" and selection == "Weekly":
+            self.weekly_image_label = Label(self.animation_frame)
+            self.weekly_image_label.place(x=self.image_x_pos, y=self.image_y_pos)
+            self.weekly_image_label.configure(image=self.weekly_image)
+        elif animation != "" and selection == "Monthly":
+            self.monthly_image_label = Label(self.animation_frame)
+            self.monthly_image_label.place(x=self.image_x_pos, y=self.image_y_pos)
+            self.monthly_image_label.configure(image=self.monthly_image)
+        elif animation != "" and selection == "Yearly":
+            self.yearly_image_label = Label(self.animation_frame)
+            self.yearly_image_label.place(x=self.image_x_pos, y=self.image_y_pos)
+            self.yearly_image_label.configure(image=self.yearly_image)
         
-        #animation = self.__animation_button_clicked
-        #selection = self.SelectionVar.get()
-        
+# the timer tick function    
+    def tick(self):
+        if self.image_x_pos > 5:
+            self.image_x_change = 2
+        if self.image_y_pos > 60:
+            self.image_y_change = 2
+        if self.image_x_pos < 0:
+            self.image_x_change = -2
+        if self.image_y_pos < 0:
+            self.image_y_change = -2    
+
+        self.image_x_pos = self.image_x_pos + self.image_x_change
+        self.image_y_pos = self.image_y_pos + self.image_y_change
+        self.weekly_image_label.place(x=self.image_x_pos, y=self.image_y_pos)
+        self.after(75, self.tick)
+
+# Placing the image
+    #def add_image_label(self):
+        self.weekly_image_label = Label(self.animation_frame)
+        self.weekly_image_label.place(x=self.image_x_pos, y=self.image_y_pos)
+        self.weekly_image_label.configure(image=self.weekly_image)
+
 
 if (__name__ == "__main__"):
     gui = Gui()
