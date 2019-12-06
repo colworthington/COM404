@@ -7,8 +7,9 @@ class AnimatedGui(Tk):
         super().__init__()
         
         # load resources
-        self.plane_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/5-animation/1-single-object/plane.gif")
-        
+        #self.plane_image = PhotoImage(file="U:/Documents/Problem Solving/COM404/2-guis/5-animation/1-single-object/plane.gif")
+        self.plane_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/5-animation/1-single-object/plane.gif")
+
         # set window attributes
         self.configure(height=500, width=500)
 
