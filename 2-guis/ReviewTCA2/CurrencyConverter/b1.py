@@ -21,6 +21,10 @@ class Gui(Tk):
         self.__add_amount_label()
         self.__add_amount_entry()
         self.__add_default_image_label()
+        self.__add_from_label()
+        self.__add_from_optionmenu()
+        self.__add_to_label()
+        self.__add_to_optionmenu()
         self.__add_buttons_frame()
         self.__add_clear_button()
         self.__add_message_box_label()
@@ -49,7 +53,7 @@ class Gui(Tk):
         self.amount_entry.grid(row=2, column=0, columnspan=5, sticky=W)
         self.amount_entry.configure(fg="#f00", width=50)
         self.amount_entry.bind("<KeyRelease>", self.__amount_keyboard_entry)
-
+      
 # Add image label to Frame with grid
     def __add_default_image_label(self):
         self.default_image_label = Label(self.outer_frame)
@@ -62,11 +66,31 @@ class Gui(Tk):
             self.default_image_label.configure(image=self.cross_image)
         else:
             self.default_image_label.configure(image=self.tick_image)
+ 
+    def __add_from_label(self):
+        self.from_label = Label(self.outer_frame)
+        self.from_label.grid(row=3, column=0, columnspan=2, sticky=W)
+        self.from_label.configure(bg="#ffe8e8", font="Arial 10", text="From")       
+
+    def __add_from_optionmenu(self):
+        self.from_optionmenu = Spinbox(self.outer_frame)
+        self.from_optionmenu.grid(row=4, column=0, columnspan=5, sticky=W)
+        self.from_optionmenu.configure(width=50)
+
+    def __add_to_label(self):
+        self.to_label = Label(self.outer_frame)
+        self.to_label.grid(row=5, column=0, columnspan=2, sticky=W)
+        self.to_label.configure(bg="#ffe8e8", font="Arial 10", text="To")       
+
+    def __add_to_optionmenu(self):
+        self.to_optionmenu = Spinbox(self.outer_frame)
+        self.to_optionmenu.grid(row=6, column=0, columnspan=5, sticky=W)
+        self.to_optionmenu.configure(width=50)
 
 # Button1 Frame
     def __add_buttons_frame(self):
         self.buttons_frame = Frame(self.outer_frame)
-        self.buttons_frame.grid(row=3, column=0, columnspan=4, sticky=N+E+S+W)
+        self.buttons_frame.grid(row=7, column=0, columnspan=4, sticky=N+E+S+W)
         self.buttons_frame.configure(bg="#ffe8e8", padx=80, pady=20)
 
     def __add_clear_button(self):
@@ -83,26 +107,28 @@ class Gui(Tk):
 
     def __add_message_box_label(self):
         self.MessageVar = StringVar()
-        self.MessageVar.set("\nSystem Message Displayed Here\n\n\n\n")
+        self.MessageVar.set("\nSystem Message Displayed Here\n")
         self.message_box_label = Message(self.outer_frame)
-        self.message_box_label.grid(row=4, column=0, columnspan=5, sticky=N+E+S+W, pady=10)
-        self.message_box_label.configure(bg="#fffbce", fg="blue",relief=SUNKEN, textvariable=self.MessageVar, width=200)
+        self.message_box_label.grid(row=8, column=0, columnspan=5, sticky=N+E+S+W, pady=10)
+        self.message_box_label.configure(bg="#fffbce", fg="blue", relief=SUNKEN, textvariable=self.MessageVar, width=200)
 
     def __convert_button_clicked(self, event):
+        amount = int(self.amount_entry.get())
+        result = amount *1.15
         converting = self.__convert_button_clicked
         if converting != "":
-            self.MessageVar.set("\nConverting...\n\n\n\n")
-            messagebox.showinfo("Output", "Display result")
+            self.MessageVar.set("\nConverting...\n")
+            messagebox.showinfo("Output","£" + str(amount) + " is " + format(result, '.2f') + " euros with a conversion rate of 1.15.")
         else:
-            self.MessageVar.set("\nSystem Message Displayed Here\n\n\n\n")
+            self.MessageVar.set("\nSystem Message Displayed Here\n")
             
     def __clear_button_clicked(self, event):
         clearing = self.__clear_button_clicked
         if clearing != "":
-            self.MessageVar.set("\nSystem Message Displayed Here\n\n\n\n")
+            self.MessageVar.set("\nSystem Message Displayed Here\n")
             self.amount_entry.delete(0, 'end')
     
-
+   
 if (__name__ == "__main__"):
     gui = Gui()
     gui.mainloop()

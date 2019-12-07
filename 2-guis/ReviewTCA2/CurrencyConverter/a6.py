@@ -62,7 +62,7 @@ class Gui(Tk):
             self.default_image_label.configure(image=self.cross_image)
         else:
             self.default_image_label.configure(image=self.tick_image)
-
+        
 # Button1 Frame
     def __add_buttons_frame(self):
         self.buttons_frame = Frame(self.outer_frame)
@@ -89,10 +89,12 @@ class Gui(Tk):
         self.message_box_label.configure(bg="#fffbce", fg="blue",relief=SUNKEN, textvariable=self.MessageVar, width=200)
 
     def __convert_button_clicked(self, event):
+        amount = int(self.amount_entry.get())
+        result = amount *1.15
         converting = self.__convert_button_clicked
         if converting != "":
             self.MessageVar.set("\nConverting...\n\n\n\n")
-            messagebox.showinfo("Output", "Display result")
+            messagebox.showinfo("Output","£" + str(amount) + " is " + format(result, '.2f') + " euros with a conversion rate of 1.15.")
         else:
             self.MessageVar.set("\nSystem Message Displayed Here\n\n\n\n")
             
@@ -102,7 +104,7 @@ class Gui(Tk):
             self.MessageVar.set("\nSystem Message Displayed Here\n\n\n\n")
             self.amount_entry.delete(0, 'end')
     
-
+   
 if (__name__ == "__main__"):
     gui = Gui()
     gui.mainloop()
