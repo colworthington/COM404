@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import time
 
 class Gui(Tk):
 
@@ -10,6 +11,8 @@ class Gui(Tk):
         self.default_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA2/CurrencyConverter/box1.gif")
         self.tick_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA2/CurrencyConverter/tick1a.gif")
         self.cross_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA2/CurrencyConverter/cross1a.gif")
+        self.house_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA2/CurrencyConverter/house.gif")
+        self.pound_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA2/CurrencyConverter/pound.gif")
 
         # set window properties
         self.title("Converter Program")
@@ -29,7 +32,17 @@ class Gui(Tk):
         self.__add_clear_button()
         self.__add_message_box_label()
         self.__add_convert_button()
+        self.__add_animation_button()
+        self.__add_animation_frame()
+        # start the timer
+        #self.tick()
         
+        # set animation attributes
+        self.image_x_pos = 5
+        self.image_y_pos = 80
+        #self.image_x_change = 1
+        #self.image_y_change = 1
+
        
 # Outer frame 
     def __add_outer_frame(self):
@@ -146,7 +159,36 @@ class Gui(Tk):
             self.MessageVar.set("\nSystem Message Displayed Here\n")
             self.amount_entry.delete(0, 'end')
     
+    def __add_animation_button(self):
+        self.animation_button = Button(self.outer_frame)
+        self.animation_button.grid(row=9, column=1, columnspan=2, padx=10)
+        self.animation_button.configure(bg="white", text="Simulate", width=14, padx=10) 
+        self.animation_button.bind("<Button-1>", self.__animation_button_clicked)
+
+# Animation Frame
+    def __add_animation_frame(self):
+        self.animation_frame = Frame(self.outer_frame)
+        self.animation_frame.grid(row=10, column=0, columnspan=5) 
+        self.animation_frame.configure(bg="#BDFCC9", height=200, width=360, padx=10, pady=10)
    
+    def __animation_button_clicked(self, event):
+        animation = self.__animation_button_clicked
+        if animation != "":
+            self.house_image_label = Label(self.animation_frame)
+            self.house_image_label.place(x = 270, y = 50)
+            self.house_image_label.configure(image=self.house_image) 
+            self.pound_image_label = Label(self.animation_frame)
+            self.pound_image_label.place(x=self.image_x_pos, y=self.image_y_pos)
+            self.pound_image_label.configure(image=self.pound_image) 
+
+# the timer tick function    
+    #def tick(self):
+        #if self.image_x_pos > 5:
+            #self.image_x_change = 1
+        #if self.image_x_pos < 0:
+            #self.image_x_change = -2
+
+
 if (__name__ == "__main__"):
     gui = Gui()
     gui.mainloop()
