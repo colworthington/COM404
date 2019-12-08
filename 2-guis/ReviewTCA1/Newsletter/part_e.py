@@ -140,6 +140,8 @@ class Gui(Tk):
         else:
             # reset to Start
             self.animation_button["text"] = "Start Animation"
+            self.image_x_change = 0 
+            self.image_y_change = 0 
 
     def __animation_button_clicked(self, event):
         animation = self.__animation_button_clicked
@@ -156,7 +158,6 @@ class Gui(Tk):
 
 # the timer tick function    
     def tick(self):
-        #stop = self.animation_button.get
         if self.image_x_pos > 280:
             self.image_x_change = -1
         if self.image_y_pos > 300:
