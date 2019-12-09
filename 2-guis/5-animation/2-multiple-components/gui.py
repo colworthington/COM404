@@ -61,8 +61,10 @@ class AnimatedGui(Tk):
 
         if self.blue_ball_y_pos < 0:
             self.blue_ball_y_change = 5
-
+        
+        # Every 4 ticks
         #if (self.num_ticks % 4 == 0):
+        
         #if self.red_ball_x_pos > 450 or self.blue_ball_x_pos > 450:
             #self.red_ball_x_change = -5
             #self.blue_ball_x_change = -5
