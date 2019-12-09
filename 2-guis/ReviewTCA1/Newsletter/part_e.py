@@ -100,7 +100,7 @@ class Gui(Tk):
         self.type_optionmenu = OptionMenu(self.outer_frame, self.SelectionVar, *choices)
         self.type_optionmenu.grid(row=3, column=0, sticky=E)
         self.type_optionmenu.configure(textvariable=self.SelectionVar, width=25, justify=CENTER, relief=RAISED, padx=15)
-        
+    
     def __add_subscribe_button(self):
         self.subscribe_button = Button()
         self.subscribe_button.grid(row=4, column=0, columnspan=2, sticky=N+E+S+W)
@@ -109,12 +109,12 @@ class Gui(Tk):
 
     def __subscribe_button_clicked(self, event):
         response = self.email_entry.get()
-        self.selection = self.SelectionVar.get()
+        selection = self.SelectionVar.get()
         if response == "":
             messagebox.showerror("Error", "Please enter you Email!")  
-        elif self.selection == "Weekly":
+        elif selection == "Weekly":
             messagebox.showinfo("Newsletter", "You have subscribed to the Weekly newsletter!  You will receive this every Monday.")        
-        elif self.selection == "Monthly":
+        elif selection == "Monthly":
             messagebox.showinfo("Newsletter", "You have subscribed to the Monthly newsletter!  You will receive this on the first day of every month.")
         else:
             messagebox.showinfo("Newsletter", "You have subscribed to the Yearly newsletter!  You will receive this at the start of each year.")
@@ -145,14 +145,14 @@ class Gui(Tk):
 
     def __animation_button_clicked(self, event):
         animation = self.__animation_button_clicked
-        #selection = self.SelectionVar.get()
+        selection = self.SelectionVar.get()
         self.type_image_label = Label(self.animation_frame)
         self.type_image_label.place(x=self.image_x_pos, y=self.image_y_pos)
-        if animation != "" and self.selection == "Weekly":
+        if animation != "" and selection == "Weekly":
             self.type_image_label.configure(image=self.weekly_image)
-        elif animation != "" and self.selection == "Monthly":
+        elif animation != "" and selection == "Monthly":
             self.type_image_label.configure(image=self.monthly_image)
-        elif animation != "" and self.selection == "Yearly":
+        elif animation != "" and selection == "Yearly":
             self.type_image_label.configure(image=self.yearly_image)
         self.tick()
 
