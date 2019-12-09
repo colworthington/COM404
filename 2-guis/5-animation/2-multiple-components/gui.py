@@ -19,13 +19,13 @@ class AnimatedGui(Tk):
         #padx=10, pady=10)
 
         # set animation attributes
-        self.red_ball_x_pos = 80
-        self.red_ball_y_pos = 140
-        self.red_ball_x_change = 5
-        self.red_ball_y_change = 5
+        self.red_ball_x_pos = 240
+        self.red_ball_y_pos = 0
+        self.red_ball_x_change = -5
+        self.red_ball_y_change = -5
 
-        self.blue_ball_x_pos = 270
-        self.blue_ball_y_pos = 300
+        self.blue_ball_x_pos = 250
+        self.blue_ball_y_pos = 20
         self.blue_ball_x_change = 5
         self.blue_ball_y_change = 5
         
@@ -38,42 +38,45 @@ class AnimatedGui(Tk):
 
 # the timer tick function    
     def tick(self):
-         #if self.red_ball_x_pos  > 450:
-            #self.red_ball_x_change = -5
-
-        #if self.red_ball_y_pos > 450:
-            #self.red_ball_y_change = -5
-        
-        #if self.red_ball_x_pos  < 0:
-           # self.red_ball_x_change = 5
-
-        #if self.red_ball_y_pos < 0:
-            #self.red_ball_y_change = 5
-
-        #if self.blue_ball_x_pos  > 450:
-           # self.blue_ball_x_change = -5
-
-        #if self.blue_ball_y_pos > 450:
-            #self.blue_ball_y_change = -5
-        
-        #if self.blue_ball_x_pos  < 0:
-            #self.blue_ball_x_change = 5
-
-        if self.red_ball_x_pos > 450 or self.blue_ball_x_pos > 450:
+        if self.red_ball_x_pos  > 450:
             self.red_ball_x_change = -5
-            self.blue_ball_x_change = -5
-            
-        if self.red_ball_y_pos > 450 or self.blue_ball_y_pos > 450:
-            self.red_ball_y_change = -5
-            self.blue_ball_y_change = -5
 
-        if self.red_ball_x_pos < 0 or self.blue_ball_x_pos < 0:
+        if self.red_ball_y_pos > 450:
+            self.red_ball_y_change = -5
+        
+        if self.red_ball_x_pos  < 0:
             self.red_ball_x_change = 5
+
+        if self.red_ball_y_pos < 0:
+            self.red_ball_y_change = 5
+
+        if self.blue_ball_x_pos  > 450:
+            self.blue_ball_x_change = -5
+
+        if self.blue_ball_y_pos > 450:
+            self.blue_ball_y_change = -5
+        
+        if self.blue_ball_x_pos  < 0:
             self.blue_ball_x_change = 5
 
-        if self.red_ball_y_pos < 0 or self.blue_ball_x_pos < 0:
-            self.red_ball_y_change = 5
+        if self.blue_ball_y_pos < 0:
             self.blue_ball_y_change = 5
+
+        #if self.red_ball_x_pos > 450 or self.blue_ball_x_pos > 450:
+            #self.red_ball_x_change = -5
+            #self.blue_ball_x_change = -5
+            
+        #if self.red_ball_y_pos > 450 or self.blue_ball_y_pos > 450:
+            #self.red_ball_y_change = -5
+            #self.blue_ball_y_change = -5
+
+        #if self.red_ball_x_pos < 0 or self.blue_ball_x_pos < 5:
+            #self.red_ball_x_change = 5
+            #self.blue_ball_x_change = 5
+
+        #if self.red_ball_y_pos < 0 or self.blue_ball_x_pos < 5:
+            #self.red_ball_y_change = 5
+            #self.blue_ball_y_change = 5
 
         self.red_ball_x_pos = self.red_ball_x_pos + self.red_ball_x_change
         self.red_ball_y_pos = self.red_ball_y_pos + self.red_ball_y_change
