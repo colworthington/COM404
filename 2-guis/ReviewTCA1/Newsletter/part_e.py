@@ -8,12 +8,19 @@ class Gui(Tk):
         super().__init__()
 
         # load resources
-        self.default_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/Grey.gif")
-        self.empty_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/sad2.gif")
-        self.filled_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/smile2.gif")
-        self.weekly_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/weekly.gif")
-        self.monthly_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/monthly.gif")
-        self.yearly_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/yearly.gif")
+        self.default_image = PhotoImage(file="//pclures06/home/4wortc73/Documents/Problem Solving/COM404/2-guis/ReviewTCA1/Newsletter/Grey.gif")
+        #self.default_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/Grey.gif")
+        self.empty_image = PhotoImage(file="//pclures06/home/4wortc73/Documents/Problem Solving/COM404/2-guis/ReviewTCA1/Newsletter/sad2.gif")        
+        #self.empty_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/sad2.gif")
+        self.filled_image = PhotoImage(file="//pclures06/home/4wortc73/Documents/Problem Solving/COM404/2-guis/ReviewTCA1/Newsletter/smile2.gif")
+        #self.filled_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/smile2.gif")
+        self.weekly_image = PhotoImage(file="//pclures06/home/4wortc73/Documents/Problem Solving/COM404/2-guis/ReviewTCA1/Newsletter/weekly.gif")
+        #self.weekly_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/weekly.gif")
+        self.monthly_image = PhotoImage(file="//pclures06/home/4wortc73/Documents/Problem Solving/COM404/2-guis/ReviewTCA1/Newsletter/monthly.gif")
+        #self.monthly_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/monthly.gif")
+        self.yearly_image = PhotoImage(file="//pclures06/home/4wortc73/Documents/Problem Solving/COM404/2-guis/ReviewTCA1/Newsletter/yearly.gif")
+        #self.yearly_image = PhotoImage(file="C:/Users/kkcolin.ENTERPRISE/Documents/GitHub/COM404/2-guis/ReviewTCA1/Newsletter/yearly.gif")
+        
 
         # set window properties
         self.title("Newsletter")
